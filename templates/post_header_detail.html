@@ -14,5 +14,9 @@
                href="{% url 'search_tag' tag_id=tag.id %}">{{ tag }}</a>
         {% endfor %}
     </p>
+    <p class="post-meta">
+        Read: {{ post.count_read }}
+        Comment: {{ post.count_comment }}
+    </p>
 
 </header>

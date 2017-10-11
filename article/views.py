@@ -14,6 +14,8 @@ def home(request):
 
 def detail(request, post_id):
     post = get_object_or_404(Article, id=post_id)
+    post.count_read += 1
+    post.save()
     return render(request, 'post.html', {'post': post})
 
 
