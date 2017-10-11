@@ -1,0 +1,7 @@
+{% load custom_markdown %}
+<div class="post-description">
+    <p>
+        {{ post.abstract | custom_markdown }}
+    </p>
+</div>
+<a class="pure-button" href="{% url "detail" post_id=post.id %}">Read More >>> </a>
