@@ -3,6 +3,7 @@ from datetime import datetime
 from article.models import Article, Category, Tag
 from django.contrib.syndication.views import Feed
 from django.shortcuts import render, get_object_or_404, get_list_or_404, redirect
+from django.urls import reverse
 
 
 # Create your views here.
@@ -12,16 +13,19 @@ class RSSFeed(Feed):
     description = "RSS feed - blog posts"
 
     def items(self):
-        return Article.objects.order_by('-date_time')
+        return Article.objects.order_by('-created_time')
 
     def item_title(self, item):
         return item.title
 
     def item_pubdate(self, item):
-        return item.add_date
+        return item.created_time
 
     def item_description(self, item):
         return item.content
+
+    def item_link(self, item):
+        return reverse('detail:post_id', {'post_id': item.id})
 
 
 def home(request):
