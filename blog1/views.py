@@ -1,7 +1,7 @@
 import os
 from datetime import datetime
 
-from article.models import Article, Category, Tag
+from blog1.models import Article, Category, Tag
 from django.conf import settings
 from django.contrib.syndication.views import Feed
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
@@ -63,7 +63,7 @@ def search_blog(request):
         if not key:
             return render(request, 'home.html')
         else:
-            post_list = Article.objects.filter(title__icontains=key)
+            post_list = Article.objects.filter(title__icontains=key, content__icontains=key)
             if len(post_list) == 0:
                 return render(request, 'archives.html', {'post_list': post_list,
                                                          'error': True})

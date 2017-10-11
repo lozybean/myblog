@@ -1,4 +1,4 @@
-from article.models import Article, Category, Tag
+from blog1.models import Article, Category, Tag
 from django.contrib import admin
 
 # Register your models here.
