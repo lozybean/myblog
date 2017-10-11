@@ -4,6 +4,14 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: Arial, "Microsoft YaHei New", "Microsoft Yahei", "微软雅黑", "宋体",
+    "SimSun", "STXihei", "华文细黑", sans-serif, Helvetica, Arial, Sans-Serif;
+    font-size: 18px;
+    line-height: 1.428;
+
+}
+
 a {
     text-decoration: none;
     color: rgb(61, 146, 201);
@@ -112,7 +120,7 @@ h3 {
 }
 
 .post-description {
-    font-family: Georgia, "Cambria", serif;
+    font-family: inherit;
     color: #444;
     line-height: 1.8em;
 }
@@ -164,7 +172,7 @@ h3 {
 }
 
 .footer a {
-    color: #ccc;
+    color: #999999;
     font-size: 80%;
 }
 

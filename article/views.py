@@ -1,6 +1,8 @@
+import os
 from datetime import datetime
 
 from article.models import Article, Category, Tag
+from django.conf import settings
 from django.contrib.syndication.views import Feed
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render, get_object_or_404, get_list_or_404, redirect
@@ -93,7 +95,10 @@ def total_category(request):
 
 
 def aboutme(request):
-    return render(request, 'aboutme.html')
+    md_file = os.path.join(settings.BASE_DIR, 'static', 'md', 'about_me.md')
+    with open(md_file, encoding='utf-8') as fp:
+        md_data = fp.read()
+    return render(request, 'aboutme.html', {'md': md_data})
 
 
 def test(request):
