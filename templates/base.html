@@ -20,7 +20,7 @@
             <h2 class="brand-tagline">WhatEver</h2>
             <nav class="nav">
                 <ul>
-                    <li>
+                    <li class="nav-item">
                         <form class="pure-form" action="{% url 'search_blog' %}" method="get">
                             <input class="pure-input-3-3" type="text" name="key" placeholder="搜索文章标题">
                         </form>
@@ -38,6 +38,11 @@
                     </li>
                     <li class="nav-item">
                         <a class="button-success pure-button" href="{% url "total_tags" %}">标签</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="nav-item">
+                        <a class="button-success pure-button" href="{% url 'RSS' %}">RSS</a>
                     </li>
                 </ul>
             </nav>

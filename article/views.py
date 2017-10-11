@@ -1,10 +1,27 @@
 from datetime import datetime
 
 from article.models import Article, Category, Tag
+from django.contrib.syndication.views import Feed
 from django.shortcuts import render, get_object_or_404, get_list_or_404, redirect
 
 
 # Create your views here.
+class RSSFeed(Feed):
+    title = "RSS feed - article"
+    link = "feeds/posts/"
+    description = "RSS feed - blog posts"
+
+    def items(self):
+        return Article.objects.order_by('-date_time')
+
+    def item_title(self, item):
+        return item.title
+
+    def item_pubdate(self, item):
+        return item.add_date
+
+    def item_description(self, item):
+        return item.content
 
 
 def home(request):
