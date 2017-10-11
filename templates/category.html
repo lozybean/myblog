@@ -6,10 +6,9 @@
         {% for post in post_list %}
             <section class="post">
                 {% include 'post_header_simple.html' %}
-
                 {% include 'post_abstract.html' %}
-
             </section>
         {% endfor %}
+        {% include 'post_page.html' %}
     </div><!-- /.blog-post -->
 {% endblock %}

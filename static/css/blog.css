@@ -173,6 +173,31 @@ h3 {
     background: none;
 }
 
+.pager {
+    padding-left: 0;
+    margin: 20px 0;
+    text-align: center;
+    list-style: none;
+    clear: both;
+}
+
+.pager .previous > a {
+    float: left;
+}
+
+.pager .next > a {
+    float: right;
+}
+
+.pager li > a {
+    display: inline-block;
+    padding: 5px 14px;
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    color: black;
+}
+
 @media (min-width: 48em) {
     .content {
         padding: 2em 3em 0;

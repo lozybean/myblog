@@ -2,6 +2,7 @@ from datetime import datetime
 
 from article.models import Article, Category, Tag
 from django.contrib.syndication.views import Feed
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render, get_object_or_404, get_list_or_404, redirect
 from django.urls import reverse
 
@@ -29,7 +30,15 @@ class RSSFeed(Feed):
 
 
 def home(request):
-    post_list = Article.objects.all()
+    posts = Article.objects.all()
+    paginator = Paginator(posts, 10)
+    page = request.GET.get('page')
+    try:
+        post_list = paginator.page(page)
+    except PageNotAnInteger:
+        post_list = paginator.page(1)
+    except EmptyPage:
+        post_list = paginator.page(paginator.num_pages)
     return render(request, 'home.html', {'post_list': post_list})
 
 
