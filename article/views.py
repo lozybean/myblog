@@ -1,7 +1,7 @@
 from datetime import datetime
 
 from article.models import Article, Category, Tag
-from django.shortcuts import render, get_object_or_404, get_list_or_404
+from django.shortcuts import render, get_object_or_404, get_list_or_404, redirect
 
 
 # Create your views here.
@@ -23,6 +23,22 @@ def archives(request):
     post_list = get_list_or_404(Article)
     return render(request, 'archives.html', {'post_list': post_list,
                                              'error': False})
+
+
+def search_blog(request):
+    if 'key' in request.GET:
+        key = request.GET['key']
+        if not key:
+            return render(request, 'home.html')
+        else:
+            post_list = Article.objects.filter(title__icontains=key)
+            if len(post_list) == 0:
+                return render(request, 'archives.html', {'post_list': post_list,
+                                                         'error': True})
+            else:
+                return render(request, 'archives.html', {'post_list': post_list,
+                                                         'error': False})
+    return redirect('/')
 
 
 def search_tag(request, tag_id):

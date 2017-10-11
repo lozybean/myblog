@@ -11,4 +11,5 @@ urlpatterns = [
     url(r'^category/(?P<category_id>\d+)/$', views.search_category, name='search_category'),
     url(r'^total_tags/$', views.total_tags, name='total_tags'),
     url(r'^total_category/$', views.total_category, name='total_category'),
+    url(r'^search/$', views.search_blog, name='search_blog')
 ]

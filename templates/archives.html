@@ -2,10 +2,14 @@
 
 {% block content %}
     <div class="posts">
-        {% for post in post_list %}
-            <section class="post">
-                {% include 'post_header_simple.html' %}
-            </section>
-        {% endfor %}
+        {% if error %}
+            <h2 class="error">没有相关文章</h2>
+        {% else %}
+            {% for post in post_list %}
+                <section class="post">
+                    {% include 'post_header_simple.html' %}
+                </section>
+            {% endfor %}
+        {% endif %}
     </div><!-- /.blog-post -->
 {% endblock %}
