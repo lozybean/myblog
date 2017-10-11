@@ -1,6 +1,8 @@
-from article.models import Article
+from article.models import Article, Category, Tag
 from django.contrib import admin
 
 # Register your models here.
 
 admin.site.register(Article)
+admin.site.register(Category)
+admin.site.register(Tag)

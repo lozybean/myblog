@@ -8,5 +8,7 @@ urlpatterns = [
     url(r'^archives/$', views.archives, name='archives'),
     url(r'^aboutme/$', views.aboutme, name='about_me'),
     url(r'^tag(?P<tag>\w+)/$', views.search_tag, name='search_tag'),
+    url(r'^category(?P<category>\w+)/$', views.search_category, name='search_category'),
     url(r'^total_tags/$', views.total_tags, name='total_tags'),
+    url(r'^total_category/$', views.total_category, name='total_category'),
 ]
