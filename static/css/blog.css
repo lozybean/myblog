@@ -14,7 +14,7 @@ body {
 
 a {
     text-decoration: none;
-    color: rgb(61, 146, 201);
+    /*color: rgb(2, 0, 20);*/
 }
 
 a:hover,
@@ -43,7 +43,7 @@ h3 {
 }
 
 .sidebar {
-    background: rgb(61, 79, 93);
+    background: rgb(8, 35, 93);
     color: #fff;
 }
 
@@ -54,6 +54,7 @@ h3 {
 
 .brand-title {
     text-transform: uppercase;
+    color: rgb(24, 213, 219);
 }
 
 .brand-tagline {

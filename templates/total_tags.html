@@ -3,7 +3,7 @@
 {% block content %}
     <div class="posts">
         {% for tag in tag_list %}
-            <a class="post-category post-category-pure" href="{% url "search_tag" tag_id=tag.id %}">{{ tag }}</a>
+            <a class="post-category-design pure-button" href="{% url "search_tag" tag_id=tag.id %}">{{ tag }}</a>
         {% endfor %}
     </div><!-- /.blog-post -->
 {% endblock %}
