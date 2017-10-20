@@ -2,8 +2,10 @@
     <h2 class="post-title">{{ post.title }}</h2>
 
     <p class="post-meta">
-        Create Time: <a class="post-author" href="#">{{ post.created_time |date:"Y / m / d" }}</a>
-        Last Modified: <a class="post-author" href="#">{{ post.modified_time |date:"Y / m / d" }}</a>
+        {#        Create Time: <a class="post-author" href="#">{{ post.created_time |date:"Y / m / d" }}</a>#}
+        {#        Last Modified: <a class="post-author" href="#">{{ post.modified_time |date:"Y / m / d" }}</a>#}
+        Create Time: {{ post.created_time |date:"Y / m / d" }}
+        Last Modified: {{ post.modified_time |date:"Y / m / d" }}
     </p>
     <p class="post-meta">
         Category: <a class="post-category post-category-yui"

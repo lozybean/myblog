@@ -14,7 +14,7 @@ body {
 
 a {
     text-decoration: none;
-    /*color: rgb(2, 0, 20);*/
+    color: rgb(14, 8, 87);
 }
 
 a:hover,
@@ -158,6 +158,11 @@ h3 {
 
 .post-images {
     margin: 1em 0;
+}
+
+.post-tag-total {
+    padding: 5px;
+    margin: 8px;
 }
 
 .post-image-meta {
