@@ -16,15 +16,15 @@
 
 <body>
 <div id="layout" class="pure-g">
-    <div class="sidebar pure-u-1 pure-u-md-1-5">
+    <div class="sidebar pure-u-1 pure-u-lg-1-5 pure-u-md-1-4">
         <div class="header">
             <h1><a href="{% url "home" %}">Café de Lyon</a></h1>
             <h2 class="brand-tagline">WhatEver</h2>
             <nav class="nav">
-                <ul>
+                <ul class="nav-list">
                     <li class="nav-item">
                         <form class="pure-form" action="{% url 'search_blog' %}" method="get">
-                            <input class="pure-input-3-3" type="text" name="key" placeholder="搜索文章标题">
+                            <input class="pure-input-1" type="text" name="key" placeholder="搜索文章标题">
                         </form>
                     </li>
                 </ul>
@@ -52,7 +52,7 @@
     </div>
 
 
-    <div class="content pure-u-1 pure-u-md-3-4">
+    <div class="content pure-u-1 pure-u-lg-3-5 pure-u-md-3-4">
         <div>
             {% block content %}
             {% endblock %}
